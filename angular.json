@@ -12,7 +12,7 @@
 			},
 			"root": "",
 			"sourceRoot": "src",
-			"prefix": "app",
+			"prefix": "krtl",
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:browser",
@@ -24,7 +24,7 @@
 						"tsConfig": "tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
 						"assets": ["src/favicon.ico", "src/assets"],
-						"styles": ["src/styles.scss"],
+						"styles": ["src/style/main.scss"],
 						"scripts": []
 					},
 					"configurations": {
@@ -93,5 +93,8 @@
 				}
 			}
 		}
+	},
+	"cli": {
+		"analytics": false
 	}
 }

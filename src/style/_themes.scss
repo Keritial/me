@@ -1,0 +1,43 @@
+// Copied and modified from https://github.com/TheNightmareX/tasked/blob/develop/projects/client/src/styles/_themes.scss
+
+@use "@angular/material" as mat;
+@use "sass:map" as map;
+
+$theme-base: mat.define-dark-theme(
+	(
+		color: (
+			primary: mat.define-palette(mat.$grey-palette),
+			accent: mat.define-palette(mat.$grey-palette),
+		),
+	)
+);
+
+$theme-light: mat.define-light-theme(
+	(
+		color: (
+			primary: mat.define-palette(mat.$teal-palette, 500),
+			accent: mat.define-palette(mat.$amber-palette, A400),
+		),
+	)
+);
+
+$theme-dark: mat.define-dark-theme(
+	(
+		color: (
+			primary: mat.define-palette(mat.$teal-palette, 200),
+			accent: mat.define-palette(mat.$amber-palette, A400),
+		),
+	)
+);
+// use colors from Material spec
+$theme-dark: map.deep-merge(
+	$theme-dark,
+	(
+		color: (
+			background: (
+				background: #121212,
+				card: #1d1d1d,
+			),
+		),
+	)
+);

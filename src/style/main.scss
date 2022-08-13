@@ -1,0 +1,33 @@
+@use "@angular/material" as mat;
+
+@use "./themes" as themes;
+@use "./material-patches" as mat-patches;
+
+@use "sass:map" as map;
+@use "sass:color" as color;
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family: "Lexend", "Noto Sans SC", Arial, Helvetica, sans-serif;
+	user-select: none;
+}
+
+.select {
+	user-select: initial;
+}
+
+@include mat.core();
+
+@include mat.all-component-themes(themes.$theme-base);
+
+@include mat.all-component-colors(themes.$theme-light);
+
+@media (prefers-color-scheme: dark) {
+	@include mat.all-component-colors(themes.$theme-dark);
+}
+
+@include mat-patches.nav-list();

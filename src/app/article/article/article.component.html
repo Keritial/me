@@ -1,0 +1,9 @@
+<ng-container *ngIf="article === undefined">
+	Getting article content of {{ id$ | async }}
+</ng-container>
+<krtl-notfound *ngIf="article === null"></krtl-notfound>
+<ng-container *ngIf="article">
+	<h1 id="article-title" [innerHTML]="article.title"></h1>
+	<div id="article-content" [innerHTML]="article.content"></div>
+	<blockquote>id: {{ id$ | async }}</blockquote>
+</ng-container>

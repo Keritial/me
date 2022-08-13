@@ -1,0 +1,46 @@
+<mat-toolbar [color]="(layout.isDark$ | async) ? '' : 'primary'">
+	<button mat-icon-button (click)="drawer.toggle()">
+		<mat-icon>menu</mat-icon>
+	</button>
+	<header>Keritial</header>
+	<div class="spacer"></div>
+	<button mat-icon-button>
+		<mat-icon>more_horiz</mat-icon>
+	</button>
+</mat-toolbar>
+<mat-sidenav-container id="drawer-container">
+	<mat-sidenav-content id="content-container">
+		<div id="content">
+			<ng-content></ng-content>
+		</div>
+	</mat-sidenav-content>
+	<mat-sidenav
+		#drawer
+		id="drawer"
+		[mode]="(layout.isLandscape$ | async) ? 'side' : 'over'"
+		[opened]="layout.isLandscape$ | async"
+	>
+		<mat-nav-list>
+			<ng-container *ngFor="let l of links">
+				<a
+					mat-list-item
+					[href]="l.href"
+					target="_blank"
+					*ngIf="l.isLink"
+				>
+					<mat-icon>{{ l.icon }}</mat-icon>
+					{{ l.name }}
+				</a>
+				<a
+					mat-list-item
+					[routerLink]="l.href"
+					*ngIf="!l.isLink"
+					(click)="nav()"
+				>
+					<mat-icon>{{ l.icon }}</mat-icon>
+					{{ l.name }}
+				</a>
+			</ng-container>
+		</mat-nav-list>
+	</mat-sidenav>
+</mat-sidenav-container>
