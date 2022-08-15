@@ -16,6 +16,11 @@ body {
 	user-select: none;
 }
 
+/* CSS is awesome */
+* {
+	box-sizing: border-box;
+}
+
 .select {
 	user-select: initial;
 }
