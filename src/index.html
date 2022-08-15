@@ -7,29 +7,50 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<!-- TODO: Use self-hosted fonts and icons instead. -->
-		<link rel="preconnect" href="https://r.krtl.top">
+		<link rel="preconnect" href="https://r.krtl.top" />
 		<!--
 			I noticed that Angular with insert Google Fonts's CSS into the document
 			automatically, so there's no need to preload the domain.
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		-->
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="stylesheet" href="https://r.krtl.top/dist/normalize.css/normalize.min.css">
+		<link
+			rel="stylesheet"
+			href="https://r.krtl.top/dist/normalize.css/normalize.min.css"
+		/>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Lexend&family=Noto+Sans+SC&display=swap"
-			rel="stylesheet" />
+			rel="stylesheet"
+		/>
 		<link
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
-			rel="stylesheet" />
+			rel="stylesheet"
+		/>
 		<meta name="theme-color" content="#1976d2" />
+
+		<!-- Google Analysis -->
+		<script
+			defer
+			src="https://www.googletagmanager.com/gtag/js?id=G-RX4SV1G9QW"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-RX4SV1G9QW");
+		</script>
 	</head>
 	<body class="mat-typography">
-	<!--
+		<!--
 		TODO: Learn SCSS and figure out how to use Angular Material Typography.
 	-->
 		<krtl-app></krtl-app>
 		<noscript>
-			JavaScript is required to run application. Please enable it or switch to a browser that supports it.
+			JavaScript is required to run application. Please enable it or
+			switch to a browser that supports it.
 		</noscript>
 	</body>
 </html>

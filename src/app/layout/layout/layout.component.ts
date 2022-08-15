@@ -24,6 +24,12 @@ export class LayoutComponent implements OnInit {
 			href: "/article",
 		},
 		{
+			"name": "Friends",
+			"icon:": "people",
+			"href": "/friend",
+		},
+
+		{
 			name: "About",
 			icon: "info",
 			href: "/about",

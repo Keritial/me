@@ -13,10 +13,10 @@ const routes: Routes = [
 			import("./article/article.module").then(m => m.ArticleModule),
 	},
 	{
-		path: "friends",
+		path: "friend",
 		loadComponent: () =>
-			import("./page/friends/friends.component").then(
-				c => c.FriendsComponent
+			import("./page/friend/friend.component").then(
+				c => c.FriendComponent
 			),
 	},
 	{

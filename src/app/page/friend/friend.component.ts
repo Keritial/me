@@ -2,13 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 @Component({
-	selector: "krtl-about",
+	selector: "krtl-friend",
 	standalone: true,
 	imports: [CommonModule],
-	templateUrl: "./about.component.html",
-	styleUrls: ["./about.component.scss"],
+	templateUrl: "./friend.component.html",
+	styleUrls: ["./friend.component.scss"],
 })
-export class AboutComponent implements OnInit {
+export class FriendComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
