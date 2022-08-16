@@ -34,6 +34,7 @@
 			src="https://www.googletagmanager.com/gtag/js?id=G-RX4SV1G9QW"
 		></script>
 		<script>
+			/* TODO: Only load analysis scripts if environment is production */
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
@@ -43,9 +44,11 @@
 			gtag("config", "G-RX4SV1G9QW");
 		</script>
 	</head>
-	<body class="mat-typography">
+	<body>
 		<!--
 		TODO: Learn SCSS and figure out how to use Angular Material Typography.
+
+		class="mat-typography"
 	-->
 		<krtl-app></krtl-app>
 		<noscript>

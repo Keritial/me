@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
 import { BreakpointObserver } from "@angular/cdk/layout";
-import { map, tap, share, BehaviorSubject } from "rxjs";
+import { Injectable } from "@angular/core";
+import { BehaviorSubject, map, share, tap } from "rxjs";
 
 @Injectable({
 	providedIn: "root",

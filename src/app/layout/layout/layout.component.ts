@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatSidenav } from "@angular/material/sidenav";
+
 import { LayoutService } from "../layout.service";
 
 @Component({
@@ -24,9 +25,9 @@ export class LayoutComponent implements OnInit {
 			href: "/article",
 		},
 		{
-			"name": "Friends",
-			"icon:": "people",
-			"href": "/friend",
+			name: "Friends",
+			icon: "people",
+			href: "/friend",
 		},
 
 		{
@@ -36,7 +37,7 @@ export class LayoutComponent implements OnInit {
 		},
 	];
 
-	nav() {
+	nav(): void {
 		if (!this.layout.isLandscape) {
 			this.drawer.toggle();
 		}

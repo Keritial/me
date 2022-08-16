@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { Component, OnInit } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 import { map } from "rxjs";
-import { MatButtonModule } from "@angular/material/button";
 
 @Component({
 	selector: "krtl-notfound",

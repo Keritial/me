@@ -2,6 +2,11 @@
 
 @use "@angular/material" as mat;
 @use "sass:map" as map;
+@use "./shared" as shared;
+
+$typography-base: mat.define-typography-config(
+	$font-family: shared.$font-family,
+);
 
 $theme-base: mat.define-dark-theme(
 	(
@@ -9,14 +14,19 @@ $theme-base: mat.define-dark-theme(
 			primary: mat.define-palette(mat.$grey-palette),
 			accent: mat.define-palette(mat.$grey-palette),
 		),
+		typography: $typography-base,
 	)
 );
+
+$color-primary: mat.$light-blue-palette;
+
+$color-accent: mat.$blue-palette;
 
 $theme-light: mat.define-light-theme(
 	(
 		color: (
-			primary: mat.define-palette(mat.$teal-palette, 500),
-			accent: mat.define-palette(mat.$amber-palette, A400),
+			primary: mat.define-palette($color-primary, 500),
+			accent: mat.define-palette($color-accent, A400),
 		),
 	)
 );
@@ -24,8 +34,8 @@ $theme-light: mat.define-light-theme(
 $theme-dark: mat.define-dark-theme(
 	(
 		color: (
-			primary: mat.define-palette(mat.$teal-palette, 200),
-			accent: mat.define-palette(mat.$amber-palette, A400),
+			primary: mat.define-palette($color-primary, 200),
+			accent: mat.define-palette($color-accent, A400),
 		),
 	)
 );

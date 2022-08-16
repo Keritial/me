@@ -1,6 +1,7 @@
 @use "@angular/material" as mat;
 
-@use "./themes" as themes;
+@use "./shared" as shared;
+@use "./theme" as theme;
 @use "./material-patches" as mat-patches;
 
 @use "sass:map" as map;
@@ -12,7 +13,7 @@ body {
 }
 
 body {
-	font-family: "Lexend", "Noto Sans SC", Arial, Helvetica, sans-serif;
+	font-family: shared.$font-family;
 	user-select: none;
 }
 
@@ -27,12 +28,12 @@ body {
 
 @include mat.core();
 
-@include mat.all-component-themes(themes.$theme-base);
+@include mat.all-component-themes(theme.$theme-base);
 
-@include mat.all-component-colors(themes.$theme-light);
+@include mat.all-component-colors(theme.$theme-light);
 
 @media (prefers-color-scheme: dark) {
-	@include mat.all-component-colors(themes.$theme-dark);
+	@include mat.all-component-colors(theme.$theme-dark);
 }
 
 @include mat-patches.nav-list();

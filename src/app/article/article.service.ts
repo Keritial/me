@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+
 import { Article, ArticleId } from "./article.type";
 
 @Injectable({
