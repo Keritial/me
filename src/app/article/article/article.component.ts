@@ -26,7 +26,9 @@ export class ArticleComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.id$.subscribe(v => {
 			this.article = undefined;
-			this.articleService.getArticle(v).then(v => (this.article = v));
+			this.articleService
+				.getArticles([v])
+				.then(v => (this.article = v[0]));
 		});
 	}
 	ngOnDestroy(): void {

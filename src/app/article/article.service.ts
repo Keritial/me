@@ -7,14 +7,16 @@ import { Article, ArticleId } from "./article.type";
 })
 export class ArticleService {
 	constructor() {}
-	async getArticle(id: ArticleId): Promise<Article | null> {
-		return id === "test404"
-			? null
-			: {
-					id,
-					title: "Your very first article.",
-					content:
-						"<p>Hello, dynamically injecting HTML into document!</p>",
-			  };
+	async getArticles(ids: ArticleId[]): Promise<(Article | null)[]> {
+		return ids.map(id =>
+			id === "404"
+				? null
+				: {
+						id,
+						title: "Your very first article.",
+						content:
+							"<p>Hello, dynamically injecting HTML into document!</p>",
+				  }
+		);
 	}
 }
