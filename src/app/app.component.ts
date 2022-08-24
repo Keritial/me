@@ -1,10 +1,13 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+
+import { Logger } from "./common/logger.service";
 
 @Component({
 	selector: "krtl-app",
 	templateUrl: "./app.component.html",
 	styleUrls: ["./app.component.scss"],
 })
-export class AppComponent {
-	title = "krtl";
+export class AppComponent implements OnInit {
+	constructor(public log: Logger) {}
+	ngOnInit(): void {}
 }

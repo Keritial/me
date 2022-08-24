@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes, TitleStrategy } from "@angular/router";
+
+import { CustomTitleStrategy } from "./common/title-strategy.service";
 
 const routes: Routes = [
 	{
@@ -30,12 +32,13 @@ const routes: Routes = [
 			import("./error/notfound/notfound.component").then(
 				c => c.NotfoundComponent
 			),
+		title: "Not Found",
 	},
 ];
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule],
-	providers: [],
+	providers: [{ provide: TitleStrategy, useClass: CustomTitleStrategy }],
 })
 export class AppRoutingModule {}

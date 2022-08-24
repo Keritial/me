@@ -1,19 +1,24 @@
 import { Injectable } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 
+import { Logger } from "./logger.service";
+
 @Injectable({
 	providedIn: "root",
 })
-export class TitleService {
-	private props: { [x: string]: string } = {};
-	constructor(private title: Title) {}
-	render(): string {
-		return `${this.props["title"]}`;
+export class TitleManager {
+	private title = "";
+	constructor(private titleRef: Title, private logger: Logger) {}
+	private update(): void {
+		if (this.title) {
+			this.titleRef.setTitle(`${this.title} | Keritial`);
+		} else {
+			this.titleRef.setTitle("Keritial");
+		}
 	}
-	update(): void {
-		this.title.setTitle(this.render());
-	}
-	set(title: string): void {
-		this.props["title"] = title;
+	setTitle(title: string): void {
+		this.logger.log(title);
+		this.title = title;
+		this.update();
 	}
 }
