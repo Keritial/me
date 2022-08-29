@@ -6,6 +6,8 @@
 
 #drawer {
 	min-width: 320px;
+	/* Disable scroll chaining */
+	overscroll-behavior: contain;
 }
 
 #drawer-container {
