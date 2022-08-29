@@ -8,6 +8,6 @@ import { Logger } from "./common/logger.service";
 	styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
-	constructor(public log: Logger) {}
+	constructor() {}
 	ngOnInit(): void {}
 }
