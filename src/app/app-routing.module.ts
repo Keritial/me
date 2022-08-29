@@ -20,11 +20,13 @@ const routes: Routes = [
 			import("./page/friend/friend.component").then(
 				c => c.FriendComponent
 			),
+		title: "Friends",
 	},
 	{
 		path: "about",
 		loadComponent: () =>
 			import("./page/about/about.component").then(c => c.AboutComponent),
+		title: "About",
 	},
 	{
 		path: "**",

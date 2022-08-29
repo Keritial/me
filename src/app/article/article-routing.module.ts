@@ -11,6 +11,7 @@ const routes: Routes = [
 		data: {
 			type: "all",
 		},
+		title: "Articles",
 	},
 	{
 		path: ":id",
