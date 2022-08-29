@@ -8,7 +8,7 @@ import { TitleManager } from "./title.service";
 })
 export class CustomTitleStrategy extends TitleStrategy {
 	updateTitle(snapshot: RouterStateSnapshot): void {
-		this.title.setTitle(this.buildTitle(snapshot) ?? "");
+		this.title.set(this.buildTitle(snapshot) ?? "");
 	}
 	constructor(private title: TitleManager) {
 		super();
