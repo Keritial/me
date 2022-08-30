@@ -1,5 +1,7 @@
 # KRTL
 
+[![Deploy](https://github.com/Keritial/KRTL/actions/workflows/deploy.yml/badge.svg)](https://github.com/Keritial/KRTL/actions/workflows/deploy.yml)
+
 [Keritial](https://github.com/Keritial)'s personal website, built with Angular.
 
 ## Credit
