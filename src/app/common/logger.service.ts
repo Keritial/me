@@ -1,19 +1,12 @@
 /* eslint-disable no-console */
 import { Injectable } from "@angular/core";
 
-import { Timestamp } from "./type";
-
 @Injectable({
 	providedIn: "root",
 })
 export class Logger {
 	private handle(level: LogLevel, args: any[]): any[] {
-		const log = {
-			level,
-			time: Date.now(),
-			content: args,
-		};
-		return [`[KRTL] [${log.time}] [${log.level}]`, ...log.content];
+		return [`[KRTL] [${Date.now()}] [${level}]`, ...args];
 	}
 	constructor() {}
 	log(...args: any[]): void {
