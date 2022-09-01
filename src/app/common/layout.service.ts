@@ -7,23 +7,21 @@ import { BehaviorSubject, map, share, tap } from "rxjs";
 })
 export class LayoutService {
 	constructor(private breakpointObserver: BreakpointObserver) {}
-	isLandscape$ = this.breakpointObserver
-		.observe("(orientation: landscape)")
-		.pipe(
-			map(v => v.matches),
-			tap(v => (this.isLandscape = v)),
-			share({
-				connector: () => new BehaviorSubject(false),
-			})
-		);
-	isLandscape = false;
+	isLarge$ = this.breakpointObserver.observe("(width >= 600px)").pipe(
+		map(v => v.matches),
+		tap(v => (this.isLarge = v)),
+		share({
+			connector: () => new BehaviorSubject(this.isLarge),
+		})
+	);
+	isLarge = false;
 	isDark$ = this.breakpointObserver
 		.observe("(prefers-color-scheme: dark)")
 		.pipe(
 			map(v => v.matches),
 			tap(v => (this.isDark = v)),
 			share({
-				connector: () => new BehaviorSubject(false),
+				connector: () => new BehaviorSubject(this.isDark),
 			})
 		);
 	isDark = false;

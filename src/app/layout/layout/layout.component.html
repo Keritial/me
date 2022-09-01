@@ -17,8 +17,8 @@
 	<mat-sidenav
 		#drawer
 		id="drawer"
-		[mode]="(layout.isLandscape$ | async) ? 'side' : 'over'"
-		[opened]="layout.isLandscape$ | async"
+		[mode]="(layout.isLarge$ | async) ? 'side' : 'over'"
+		[opened]="layout.isLarge$ | async"
 	>
 		<mat-nav-list>
 			<ng-container *ngFor="let l of links">

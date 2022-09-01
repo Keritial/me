@@ -14,7 +14,6 @@ body {
 
 body {
 	font-family: shared.$font-family;
-	user-select: none;
 	/* Disable pull-to-refresh */
 	overscroll-behavior: contain;
 }
@@ -22,10 +21,6 @@ body {
 /* CSS is awesome */
 * {
 	box-sizing: border-box;
-}
-
-.select {
-	user-select: initial;
 }
 
 @include mat.core();

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatSidenav } from "@angular/material/sidenav";
 
-import { LayoutService } from "../layout.service";
+import { LayoutService } from "../../common/layout.service";
 
 @Component({
 	selector: "krtl-layout",
@@ -38,7 +38,7 @@ export class LayoutComponent implements OnInit {
 	];
 
 	nav(): void {
-		if (!this.layout.isLandscape) {
+		if (!this.layout.isLarge) {
 			this.drawer.toggle();
 		}
 	}
