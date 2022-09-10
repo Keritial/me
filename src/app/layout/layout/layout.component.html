@@ -1,3 +1,8 @@
+<!-- Unlike what angular.io did to app bar,
+	 I personally prefers to display grey for it
+	 as well as background.
+	 
+	 Maybe I can achieve this in a pure CSS way? -->
 <mat-toolbar [color]="(layout.isDark$ | async) ? '' : 'primary'">
 	<button mat-icon-button (click)="drawer.toggle()">
 		<mat-icon>menu</mat-icon>
@@ -20,27 +25,6 @@
 		[mode]="(layout.isLarge$ | async) ? 'side' : 'over'"
 		[opened]="layout.isLarge$ | async"
 	>
-		<mat-nav-list>
-			<ng-container *ngFor="let l of links">
-				<a
-					mat-list-item
-					[href]="l.href"
-					target="_blank"
-					*ngIf="l.isLink"
-				>
-					<mat-icon>{{ l.icon }}</mat-icon>
-					{{ l.name }}
-				</a>
-				<a
-					mat-list-item
-					[routerLink]="l.href"
-					*ngIf="!l.isLink"
-					(click)="nav()"
-				>
-					<mat-icon>{{ l.icon }}</mat-icon>
-					{{ l.name }}
-				</a>
-			</ng-container>
-		</mat-nav-list>
+
 	</mat-sidenav>
 </mat-sidenav-container>

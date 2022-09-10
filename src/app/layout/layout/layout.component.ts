@@ -1,5 +1,13 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { MatSidenav } from "@angular/material/sidenav";
+import {
+	Component,
+	EventEmitter,
+	OnDestroy,
+	OnInit,
+	ViewChild,
+} from "@angular/core";
+import { MatDrawer } from "@angular/material/sidenav";
+import { NavigationEnd, Router } from "@angular/router";
+import { filter, takeUntil } from "rxjs";
 
 import { LayoutService } from "../../common/layout.service";
 
@@ -8,48 +16,27 @@ import { LayoutService } from "../../common/layout.service";
 	templateUrl: "./layout.component.html",
 	styleUrls: ["./layout.component.scss"],
 })
-export class LayoutComponent implements OnInit {
-	constructor(public layout: LayoutService) {}
+export class LayoutComponent implements OnInit, OnDestroy {
+	destory$ = new EventEmitter();
 	@ViewChild("drawer")
-	drawer!: MatSidenav;
+	drawer?: MatDrawer;
 
-	links: Link[] = [
-		{
-			name: "Home",
-			icon: "home",
-			href: "/",
-		},
-		{
-			name: "Articles",
-			icon: "article",
-			href: "/article",
-		},
-		{
-			name: "Friends",
-			icon: "people",
-			href: "/friend",
-		},
+	constructor(public layout: LayoutService, private router: Router) {}
 
-		{
-			name: "About",
-			icon: "info",
-			href: "/about",
-		},
-	];
-
-	nav(): void {
-		if (!this.layout.isLarge) {
-			this.drawer.toggle();
-		}
+	ngOnDestroy(): void {
+		this.destory$.emit();
 	}
 
-	ngOnInit(): void {}
-}
-
-export interface Link {
-	icon?: string;
-	color?: string;
-	href?: string;
-	name?: string;
-	isLink?: boolean;
+	ngOnInit(): void {
+		this.router.events
+			.pipe(
+				takeUntil(this.destory$),
+				filter(() => this.layout.isLarge)
+			)
+			.subscribe(event => {
+				if (event instanceof NavigationEnd) {
+					this.drawer?.close();
+				}
+			});
+	}
 }

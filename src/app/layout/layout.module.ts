@@ -8,9 +8,10 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { RouterModule } from "@angular/router";
 
 import { LayoutComponent } from "./layout/layout.component";
+import { NavlistComponent } from "./navlist/navlist.component";
 
 @NgModule({
-	declarations: [LayoutComponent],
+	declarations: [LayoutComponent, NavlistComponent],
 	imports: [
 		CommonModule,
 		MatSidenavModule,
