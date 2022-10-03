@@ -28,6 +28,28 @@
 		[mode]="(layout.isLarge$ | async) ? 'side' : 'over'"
 		[opened]="layout.isLarge$ | async"
 	>
-		<krtl-navlist></krtl-navlist>
+		<mat-nav-list>
+			<ng-container *ngFor="let it of links">
+				<a
+					mat-list-item
+					[href]="it.href"
+					target="_blank"
+					*ngIf="it.isLink"
+				>
+					<mat-icon>{{ it.icon }}</mat-icon>
+					{{ it.name }}
+				</a>
+				<a
+					mat-list-item
+					[routerLink]="it.href"
+					*ngIf="!it.isLink"
+					(click)="navigate$.emit(it.href ?? '')"
+				>
+					<mat-icon>{{ it.icon }}</mat-icon>
+					{{ it.name }}
+				</a>
+			</ng-container>
+		</mat-nav-list>
+		<!--button mat-button (click)="g()">Generate placeholders</button-->
 	</mat-sidenav>
 </mat-sidenav-container>

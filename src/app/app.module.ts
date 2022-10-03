@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 //import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { LayoutModule } from "./layout/layout.module";
+import { LayoutComponent } from "./layout/layout.component";
 
 @NgModule({
 	declarations: [AppComponent],
@@ -20,7 +20,7 @@ import { LayoutModule } from "./layout/layout.module";
 			// or after 30 seconds (whichever comes first).
 			registrationStrategy: "registerWhenStable:30000",
 		}),*/
-		LayoutModule,
+		LayoutComponent,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
