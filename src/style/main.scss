@@ -15,6 +15,8 @@ body {
 body {
 	font-family: shared.$font-family;
 	overscroll-behavior: contain;
+	/* Non-standard, Chrome and Safari only */
+	-webkit-tap-highlight-color: transparent;
 }
 
 /* CSS is awesome */
