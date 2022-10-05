@@ -3,8 +3,9 @@
 @use "./shared" as shared;
 @use "./theme" as theme;
 
-@use "sass:map" as map;
-@use "sass:color" as color;
+@import "./material-patches";
+@import "./normalize.css";
+@import "./material-icons.css";
 
 @import "./material-patches";
 @import "./normalize.css";
@@ -35,6 +36,7 @@ body {
 @media (prefers-color-scheme: dark) {
 	@include mat.all-component-colors(theme.$theme-dark);
 }
+<<<<<<< HEAD
 
 @font-face {
 	font-family: "Material Icons";
@@ -59,3 +61,5 @@ body {
 	-moz-font-feature-settings: "liga";
 	-moz-osx-font-smoothing: grayscale;
 }
+=======
+>>>>>>> de04ec4 (chore: integrated external css)
