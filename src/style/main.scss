@@ -7,9 +7,6 @@
 @import "./normalize.css";
 @import "./material-icons.css";
 
-@import "./material-patches";
-@import "./normalize.css";
-
 html,
 body {
 	height: 100%;
@@ -36,30 +33,3 @@ body {
 @media (prefers-color-scheme: dark) {
 	@include mat.all-component-colors(theme.$theme-dark);
 }
-<<<<<<< HEAD
-
-@font-face {
-	font-family: "Material Icons";
-	font-style: normal;
-	font-weight: 400;
-	src: url("https://r.krtl.top/dist/material-icons/material-icons.woff2") format("woff2");
-}
-
-.material-icons {
-	font-family: "Material Icons";
-	font-weight: normal;
-	font-style: normal;
-	font-size: 24px;
-	line-height: 1;
-	letter-spacing: normal;
-	text-transform: none;
-	display: inline-block;
-	white-space: nowrap;
-	word-wrap: normal;
-	direction: ltr;
-	font-feature-settings: "liga";
-	-moz-font-feature-settings: "liga";
-	-moz-osx-font-smoothing: grayscale;
-}
-=======
->>>>>>> de04ec4 (chore: integrated external css)
