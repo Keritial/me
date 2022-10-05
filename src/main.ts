@@ -4,13 +4,15 @@ import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
 import { AppModule } from "./app/app.module";
 import { environment } from "./environments/environment";
+import { enableGoogleAnalytics } from "./util/GoogleAnalytics";
 
 if (environment.production) {
 	enableProdMode();
+	enableGoogleAnalytics();
 }
 
 platformBrowserDynamic()
 	.bootstrapModule(AppModule)
-	.catch(err => console.error(err));
+	.catch(it => console.error(it));
 
-addEventListener("unhandledrejection", event => console.error(event.reason));
+addEventListener("unhandledrejection", it => console.error(it.reason));

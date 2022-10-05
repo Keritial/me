@@ -4,16 +4,8 @@ module.exports = {
 		project: "tsconfig.json",
 		sourceType: "module",
 	},
-	plugins: [
-		"@typescript-eslint/eslint-plugin",
-		"prettier",
-		"simple-import-sort",
-	],
-	extends: [
-		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:prettier/recommended",
-	],
+	plugins: ["@typescript-eslint/eslint-plugin", "prettier", "simple-import-sort"],
+	extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
 	root: true,
 	env: {
 		node: true,
@@ -26,23 +18,14 @@ module.exports = {
 		"@typescript-eslint/no-inferrable-types": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "error",
 		"@typescript-eslint/no-duplicate-imports": "error",
-		"@typescript-eslint/consistent-type-definitions": [
-			"error",
-			"interface",
-		],
+		"@typescript-eslint/consistent-type-definitions": ["error", "interface"],
 		"@typescript-eslint/method-signature-style": ["error", "method"],
-		"@typescript-eslint/explicit-member-accessibility": [
-			"error",
-			{ accessibility: "no-public" },
-		],
+		"@typescript-eslint/explicit-member-accessibility": ["error", { accessibility: "no-public" }],
 		"@typescript-eslint/consistent-type-assertions": [
 			"error",
 			{ assertionStyle: "as", objectLiteralTypeAssertions: "never" },
 		],
-		"@typescript-eslint/no-unused-vars": [
-			"error",
-			{ argsIgnorePattern: "args" },
-		],
+		"@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "args" }],
 		"@typescript-eslint/naming-convention": [
 			"error",
 			{ selector: "default", format: ["strictCamelCase"] },
