@@ -1,11 +1,5 @@
 import { CommonModule } from "@angular/common";
-import {
-	Component,
-	EventEmitter,
-	OnDestroy,
-	OnInit,
-	ViewChild,
-} from "@angular/core";
+import { Component, EventEmitter, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";

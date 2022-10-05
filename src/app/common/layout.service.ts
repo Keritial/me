@@ -15,14 +15,12 @@ export class LayoutService {
 		})
 	);
 	isLarge = false;
-	isDark$ = this.breakpointObserver
-		.observe("(prefers-color-scheme: dark)")
-		.pipe(
-			map(it => it.matches),
-			tap(it => (this.isDark = it)),
-			share({
-				connector: () => new BehaviorSubject(this.isDark),
-			})
-		);
+	isDark$ = this.breakpointObserver.observe("(prefers-color-scheme: dark)").pipe(
+		map(it => it.matches),
+		tap(it => (this.isDark = it)),
+		share({
+			connector: () => new BehaviorSubject(this.isDark),
+		})
+	);
 	isDark = false;
 }

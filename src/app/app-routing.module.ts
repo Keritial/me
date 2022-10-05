@@ -28,42 +28,27 @@ const routes: Routes = [
 		children: [
 			{
 				path: "uuid",
-				loadComponent: () =>
-					import("./tool/uuid/uuid.component").then(
-						it => it.UuidComponent
-					),
+				loadComponent: () => import("./tool/uuid/uuid.component").then(it => it.UuidComponent),
 			},
 		],
 	},
 	{
 		path: "",
-		loadComponent: () =>
-			import("./page/index/index.component").then(
-				it => it.IndexComponent
-			),
+		loadComponent: () => import("./page/index/index.component").then(it => it.IndexComponent),
 	},
 	{
 		path: "friend",
-		loadComponent: () =>
-			import("./page/friend/friend.component").then(
-				it => it.FriendComponent
-			),
+		loadComponent: () => import("./page/friend/friend.component").then(it => it.FriendComponent),
 		title: "Friends",
 	},
 	{
 		path: "about",
-		loadComponent: () =>
-			import("./page/about/about.component").then(
-				it => it.AboutComponent
-			),
+		loadComponent: () => import("./page/about/about.component").then(it => it.AboutComponent),
 		title: "About",
 	},
 	{
 		path: "**",
-		loadComponent: () =>
-			import("./error/notfound/notfound.component").then(
-				it => it.NotfoundComponent
-			),
+		loadComponent: () => import("./error/notfound/notfound.component").then(it => it.NotfoundComponent),
 		title: "Not Found",
 	},
 ];

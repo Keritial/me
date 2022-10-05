@@ -1,6 +1,4 @@
-<ng-container *ngIf="article === undefined">
-	Getting article content of {{ id$ | async }}
-</ng-container>
+<ng-container *ngIf="article === undefined"> Getting article content of {{ id$ | async }} </ng-container>
 <krtl-notfound *ngIf="article === null"></krtl-notfound>
 <ng-container *ngIf="article">
 	<h1 id="article-title" [innerHTML]="article.title"></h1>

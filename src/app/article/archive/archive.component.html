@@ -2,7 +2,6 @@
 <p>Actually this isn't a working blog.</p>
 <div *ngFor="let i of articles">
 	<a routerLink="/article/{{ i.id }}">{{ i.id }}</a
-	>, alias: <ng-container *ngFor="let a of i.alias">"{{ a }}" </ng-container
-	><br />
+	>, alias: <ng-container *ngFor="let a of i.alias">"{{ a }}" </ng-container><br />
 	Content: {{ i.content }} <br />&nbsp;
 </div>

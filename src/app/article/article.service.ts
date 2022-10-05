@@ -10,10 +10,7 @@ const ARTICLES: Article[] = [
 			"test content: " +
 			new Date().toString() +
 			"<br>" +
-			Array.from(
-				{ length: 100 },
-				() => Math.random() * Number.MAX_SAFE_INTEGER
-			)
+			Array.from({ length: 100 }, () => Math.random() * Number.MAX_SAFE_INTEGER)
 				.map(it => it.toString(16))
 				.join(" "),
 		alias: ["测试", "testing"],
@@ -51,11 +48,7 @@ export class ArticleService {
 	constructor() {}
 	// All below is temporary placeholder
 	async getArticles(ids: ArticleId[]): Promise<(Article | null)[]> {
-		return ids.map(
-			id =>
-				ARTICLES.find(it => it.id === id || it.alias?.includes(id)) ||
-				null
-		);
+		return ids.map(id => ARTICLES.find(it => it.id === id || it.alias?.includes(id)) || null);
 	}
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	async getArticlesList(page: number): Promise<Article[]> {

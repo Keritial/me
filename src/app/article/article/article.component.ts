@@ -15,10 +15,7 @@ import { Article, ArticleId } from "../article.type";
 	imports: [CommonModule, RouterModule, NotfoundComponent],
 })
 export class ArticleComponent implements OnInit, OnDestroy {
-	constructor(
-		private route: ActivatedRoute,
-		private articleService: ArticleService
-	) {}
+	constructor(private route: ActivatedRoute, private articleService: ArticleService) {}
 	private destory$ = new EventEmitter();
 
 	protected id$ = this.route.params.pipe(
@@ -30,9 +27,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.id$.subscribe(v => {
 			this.article = undefined;
-			this.articleService
-				.getArticles([v])
-				.then(v => (this.article = v[0]));
+			this.articleService.getArticles([v]).then(v => (this.article = v[0]));
 		});
 	}
 	ngOnDestroy(): void {

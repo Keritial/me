@@ -14,9 +14,7 @@ import { map } from "rxjs";
 export class NotfoundComponent implements OnInit {
 	constructor(private route: ActivatedRoute) {}
 
-	protected path$ = this.route.url.pipe(
-		map(it => "/" + it.map(it => it.path).join("/"))
-	);
+	protected path$ = this.route.url.pipe(map(it => "/" + it.map(it => it.path).join("/")));
 
 	ngOnInit(): void {}
 }
