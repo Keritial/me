@@ -1,15 +1,15 @@
+<mat-progress-bar mode="indeterminate" class="indicator" [@indicator]="indicator"></mat-progress-bar>
+
 <!-- TODO: Achieving colour switching in CSS -->
 <mat-toolbar [color]="(layout.isDark$ | async) ? '' : 'primary'" id="toolbar">
 	<button mat-icon-button (click)="drawer.toggle()">
 		<mat-icon>menu</mat-icon>
 	</button>
 	<header>Keritial</header>
-	<!--
-		<div class="spacer"></div>
-		<button mat-icon-button>
-			<mat-icon>more_horiz</mat-icon>
-		</button>
-		-->
+	<div class="spacer"></div>
+	<button mat-icon-button>
+		<mat-icon>more_horiz</mat-icon>
+	</button>
 </mat-toolbar>
 <mat-sidenav-container id="container">
 	<mat-sidenav-content id="content">
@@ -35,6 +35,5 @@
 				</a>
 			</ng-container>
 		</mat-nav-list>
-		<!--button mat-button (click)="g()">Generate placeholders</button-->
 	</mat-sidenav>
 </mat-sidenav-container>
