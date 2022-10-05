@@ -1,3 +1,40 @@
-<krtl-layout>
-	<router-outlet></router-outlet>
-</krtl-layout>
+<!-- TODO: Achieving colour switching in CSS -->
+<mat-toolbar [color]="(layout.isDark$ | async) ? '' : 'primary'" id="toolbar">
+	<button mat-icon-button (click)="drawer.toggle()">
+		<mat-icon>menu</mat-icon>
+	</button>
+	<header>Keritial</header>
+	<!--
+		<div class="spacer"></div>
+		<button mat-icon-button>
+			<mat-icon>more_horiz</mat-icon>
+		</button>
+		-->
+</mat-toolbar>
+<mat-sidenav-container id="container">
+	<mat-sidenav-content id="content">
+		<div id="content-warp">
+			<router-outlet></router-outlet>
+		</div>
+	</mat-sidenav-content>
+	<mat-sidenav
+		#drawer
+		id="drawer"
+		[mode]="(layout.isLarge$ | async) ? 'side' : 'over'"
+		[opened]="layout.isLarge$ | async"
+	>
+		<mat-nav-list>
+			<ng-container *ngFor="let it of links">
+				<a mat-list-item [href]="it.href" target="_blank" *ngIf="it.isLink">
+					<mat-icon>{{ it.icon }}</mat-icon>
+					{{ it.name }}
+				</a>
+				<a mat-list-item [routerLink]="it.href" *ngIf="!it.isLink" (click)="navigate$.emit(it.href ?? '')">
+					<mat-icon>{{ it.icon }}</mat-icon>
+					{{ it.name }}
+				</a>
+			</ng-container>
+		</mat-nav-list>
+		<!--button mat-button (click)="g()">Generate placeholders</button-->
+	</mat-sidenav>
+</mat-sidenav-container>

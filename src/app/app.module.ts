@@ -1,12 +1,17 @@
 import { NgModule } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatListModule } from "@angular/material/list";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { RouterModule } from "@angular/router";
 
 //import { ServiceWorkerModule } from "@angular/service-worker";
 //import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { LayoutComponent } from "./layout/layout.component";
 
 @NgModule({
 	declarations: [AppComponent],
@@ -20,7 +25,12 @@ import { LayoutComponent } from "./layout/layout.component";
 			// or after 30 seconds (whichever comes first).
 			registrationStrategy: "registerWhenStable:30000",
 		}),*/
-		LayoutComponent,
+		MatSidenavModule,
+		MatToolbarModule,
+		MatIconModule,
+		MatButtonModule,
+		MatListModule,
+		RouterModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
