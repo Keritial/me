@@ -5,9 +5,10 @@ import { BehaviorSubject, map, share, tap } from "rxjs";
 @Injectable({
 	providedIn: "root",
 })
+// TODO: rename to ThemeService
 export class LayoutService {
 	constructor(private breakpointObserver: BreakpointObserver) {}
-	isLarge$ = this.breakpointObserver.observe("(width >= 600px)").pipe(
+	isLarge$ = this.breakpointObserver.observe("(width >= 600px), (orientation: landscape)").pipe(
 		map(it => it.matches),
 		tap(it => (this.isLarge = it)),
 		share({
