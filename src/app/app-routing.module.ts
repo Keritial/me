@@ -1,9 +1,13 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes, TitleStrategy } from "@angular/router";
+import { Route, RouterModule, Routes, TitleStrategy } from "@angular/router";
 
 import { CustomTitleStrategy } from "./common/title-strategy.service";
+import { PageGuard } from "./page/page.guard";
 
 const routes: Routes = [
+	createPage("", ""),
+	createPage("friend", ""),
+	createPage("about", "pass"),
 	{
 		path: "article",
 		loadChildren: () => import("./article/article.module").then(it => it.ArticleModule),
@@ -44,3 +48,14 @@ const routes: Routes = [
 	providers: [{ provide: TitleStrategy, useClass: CustomTitleStrategy }],
 })
 export class AppRoutingModule {}
+
+function createPage(path: string, url: string): Route {
+	return {
+		path,
+		loadComponent: () => import("./page/page.component").then(it => it.PageComponent),
+		data: {
+			url,
+		},
+		canActivate: [PageGuard],
+	};
+}
